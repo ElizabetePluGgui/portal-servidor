@@ -32,6 +32,39 @@ const Header = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <Nav className="ml-auto" activeKey="/home">
+          {props.auth.user.adm && (
+              <NavDropdown
+                title="Gestão de Certificados"
+                id="basic-nav-dropdown"
+                className="menu-usuario"
+              >
+                <NavDropdown.Item
+                  eventKey="1"
+                  as={Link}
+                  to="/restrito/create-certificates"
+                >
+                  Cadastrar certificados
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item
+                  eventKey="2"
+                  as={Link}
+                  to="/restrito/upload-vacation-payslip"
+                >
+                  Consulta de certificados
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item
+                  eventKey="2"
+                  as={Link}
+                  to="/restrito/upload-others-payslip"
+                >
+                  Gerenciar certificados
+                </NavDropdown.Item>          
+                        
+              </NavDropdown>
+            )}
+          
             {props.auth.user.adm && (
               <NavDropdown
                 title="Gestão de Holerite"
