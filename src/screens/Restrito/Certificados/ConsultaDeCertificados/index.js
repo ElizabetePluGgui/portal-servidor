@@ -9,7 +9,7 @@ import Form from './Form';
 import { IndexStyles } from '../../Styles';
 import Menu from '../../elements/Menu';
 
-const CadastrarCertificados = props => {
+const EnviarHolerite = props => {
   if (!props.auth.isAuth) {
     return <Redirect to="/login" />;
   }
@@ -26,7 +26,7 @@ const CadastrarCertificados = props => {
             <Menu />
           </Col>
           <Col xs={9} md={10} className="principal">
-            <Form title="Cadastrar Certificados" />
+            <Form title="Consulta de Certificados" />
           </Col>
         </Row>
       </Container>
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CadastrarCertificados);
+export default connect(mapStateToProps)(EnviarHolerite);

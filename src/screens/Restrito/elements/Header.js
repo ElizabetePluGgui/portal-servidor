@@ -43,23 +43,23 @@ const Header = props => {
                   as={Link}
                   to="/restrito/create-certificates"
                 >
-                  Cadastrar certificados
+                  Cadastrar Certificados
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item
                   eventKey="2"
                   as={Link}
-                  to="/restrito/upload-vacation-payslip"
+                  to="/restrito/query-certificates"
                 >
-                  Consulta de certificados
+                  Consulta de Certificados
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item
                   eventKey="2"
                   as={Link}
-                  to="/restrito/upload-others-payslip"
+                  to="/restrito/manage-certificates"
                 >
-                  Gerenciar certificados
+                  Gerenciar Certificados
                 </NavDropdown.Item>          
                         
               </NavDropdown>

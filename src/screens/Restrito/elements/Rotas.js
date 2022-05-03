@@ -51,6 +51,7 @@ const Rotas = props => {
           path={`${props.path}/consulta-certificados`}
           component={ConsultaCertificados}
         />
+            
         <RotasAdm path={props.path} />
 
         <Route path="*" exact={true} component={PageNotFound} />
