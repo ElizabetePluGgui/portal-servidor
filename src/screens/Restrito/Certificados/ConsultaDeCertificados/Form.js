@@ -7,16 +7,16 @@ import { Alert, Button, GridContainer, Input } from 'components-ui-cmjau';
 import { IndexStyles } from '../../../Restrito/Styles';
 import { FormStyles } from '../Styles';
 
-const Form = (props) => {
+const Form = props => {
   const [errorMessage, setErrorMessage] = useState('');
   const [typeOfErrorMessage, setTypeOfErrorMessage] = useState('danger');
-  const [fieldMatriculaDoFuncionario, setFieldMatriculaDoFuncionario] = useState('');
-     
+  const [fieldMatriculaDoFuncionario, setFieldMatriculaDoFuncionario] =
+    useState('');
+
   const handleMatriculaDoFuncionario = evt => {
     setFieldMatriculaDoFuncionario(evt.target.value);
   };
-   
-  
+
   return (
     <IndexStyles>
       <FormStyles>
@@ -24,7 +24,7 @@ const Form = (props) => {
         <Container className="meio">
           <GridContainer columns={3}>
             <div className="select-container">
-              <Input className="border border-secondary "
+              <Input
                 field="MatriculaDoFuncionario"
                 label="Matrícula do Funcionário"
                 onChange={handleMatriculaDoFuncionario}
@@ -32,8 +32,7 @@ const Form = (props) => {
                 value={fieldMatriculaDoFuncionario}
               />
             </div>
-          </GridContainer> 
-                  
+          </GridContainer>
 
           {errorMessage && (
             <Alert message={errorMessage} type={typeOfErrorMessage} />
@@ -42,8 +41,6 @@ const Form = (props) => {
       </FormStyles>
     </IndexStyles>
   );
-
-
 };
 
 export default Form;
