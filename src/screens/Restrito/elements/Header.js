@@ -14,9 +14,11 @@ const Header = props => {
     <HeaderStyles>
       <header>
         <Navbar expand="sm md lg">
-          <Navbar.Brand href="/restrito">
-            <Image src={logo} className="navbar-logo" rounded />
-            {props.title}
+          <Navbar.Brand href="/restrito" className="header-title">
+            <Link to={'/restrito'} className="header-title">
+              <Image src={logo} className="navbar-logo" rounded />
+              <span>{props.title}</span>
+            </Link>
           </Navbar.Brand>
           <button
             className="navbar-toggler"
@@ -30,6 +32,39 @@ const Header = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <Nav className="ml-auto" activeKey="/home">
+          {props.auth.user.adm && (
+              <NavDropdown
+                title="Gestão de Certificados"
+                id="basic-nav-dropdown"
+                className="menu-usuario"
+              >
+                <NavDropdown.Item
+                  eventKey="1"
+                  as={Link}
+                  to="/restrito/create-certificates"
+                >
+                  Cadastrar Certificados
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item
+                  eventKey="2"
+                  as={Link}
+                  to="/restrito/query-certificates"
+                >
+                  Consulta de Certificados
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item
+                  eventKey="2"
+                  as={Link}
+                  to="/restrito/manage-certificates"
+                >
+                  Gerenciar Certificados
+                </NavDropdown.Item>          
+                        
+              </NavDropdown>
+            )}
+          
             {props.auth.user.adm && (
               <NavDropdown
                 title="Gestão de Holerite"
@@ -87,7 +122,7 @@ const Header = props => {
               className="menu-usuario"
             >
               <NavDropdown.Item eventKey="5" href="restrito/minha-conta">
-                Minha Conta
+                <Link to={'/restrito/minha-conta'}>Minha Conta</Link>
               </NavDropdown.Item>
               <NavDropdown.Item eventKey="6" href="restrito/alterar-senha">
                 <Link to={'/restrito/alterar-senha'}>Alterar Senha</Link>

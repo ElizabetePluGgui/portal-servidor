@@ -7,7 +7,9 @@ import PageNotFound from '../elements/404';
 import EnviarHolerite from '../Holerite/EnviarHolerite';
 import EnviarHoleriteFerias from '../Holerite/EnviarHoleriteFerias';
 import EnviarHoleriteLicencaPremio from '../Holerite/EnviarHoleriteLicencaPremio'; //
-import GerenciarCertificados from '../Cursos/GerenciamentoDeCertificados';
+import CadastrarCertificados from '../Certificados/CadastrarCertificados';
+import ConsultaDeCertificados from '../Certificados/ConsultaDeCertificados';
+import GerenciarCertificados from '../Certificados/GerenciarCertificados';
 
 const RotasAdm = props => {
   return (
@@ -30,9 +32,21 @@ const RotasAdm = props => {
         />
         <Route
           exact
-          path={`${props.path}/manager-certificates`}
+          path={`${props.path}/create-certificates`}
+          component={CadastrarCertificados}
+        />
+        <Route
+          exact
+          path={`${props.path}/query-certificates`}
+          component={ConsultaDeCertificados}
+        />
+        <Route
+          exact
+          path={`${props.path}/manage-certificates`}
           component={GerenciarCertificados}
         />
+        
+        
         <Route path="*" exact={true} component={PageNotFound} />
       </Switch>
     </>
